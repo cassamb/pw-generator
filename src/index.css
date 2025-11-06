@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: Martian-Mono;
+    src: url(assets/fonts/MartianMono-VariableFont_wdth\,wght.ttf);
+}
