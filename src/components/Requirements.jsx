@@ -1,11 +1,13 @@
 import {useState} from 'react';
-import {pwRequirements} from "../helpers/createPW";
+import {createPassword} from "../helpers/generator";
+import Password from './Password';
 
 const Requirements = () => {
     const [length, setLength] = useState('');
     const [uppChars, setUppChars] = useState('');
     const [spChars, setSpChars] = useState('');
     const [numChars, setNumChars] = useState('');
+    const [password, setPassword] = useState('');
 
     const generatePW = (e) => {
         e.preventDefault();
@@ -17,11 +19,13 @@ const Requirements = () => {
             numChars,
         }
 
-        pwRequirements(requirements);
+        setPassword(createPassword(requirements));
     }
+
 
   return (
     <>
+      <Password password={password}/>
       <div className="font-[Martian-Mono] flex-1 rounded-xl bg-[#757092] p-7 text-xs">
         <form onSubmit={generatePW}>
           <div className="mb-4 flex justify-between">
