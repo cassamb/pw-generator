@@ -6,9 +6,9 @@ const App = () => {
   return (
     <>
       <Header/>
-      <main className="container max-w-3xl m-auto grid grid-cols-5 gap-x-7">
+      <main className="max-w-3xl mx-5 grid gap-5 sm:container sm:grid-cols-5 sm:gap-x-7">
         <Instructions/>
-        <section className="flex flex-col gap-7 col-span-2">
+        <section className="sm:col-span-2 sm:flex sm:flex-col sm:gap-7">
           <Requirements/>
         </section>
       </main>

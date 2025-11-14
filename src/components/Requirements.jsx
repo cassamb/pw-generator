@@ -9,7 +9,7 @@ const Requirements = () => {
     const [numChars, setNumChars] = useState('');
     const [password, setPassword] = useState('');
 
-    const generatePW = (e) => {
+    const generatePassword = (e) => {
         e.preventDefault();
 
         const requirements = {
@@ -26,8 +26,8 @@ const Requirements = () => {
   return (
     <>
       <Password password={password}/>
-      <div className="font-[Martian-Mono] flex-1 rounded-xl bg-[#757092] p-7 text-xs">
-        <form onSubmit={generatePW}>
+      <div className="rounded-xl bg-[#757092] p-5 font-[Martian-Mono] text-xs sm:flex-1 sm:p-7">
+        <form onSubmit={generatePassword}>
           <div className="mb-4 flex justify-between">
             <label htmlFor="length" className="font-semibold">
               Length:

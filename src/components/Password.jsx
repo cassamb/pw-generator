@@ -1,3 +1,5 @@
+import {FiCopy} from "react-icons/fi";
+
 const Password = ({password}) => {
 
   if (password === '') { // placeholder
@@ -6,10 +8,11 @@ const Password = ({password}) => {
   
   return (
     <>
-      <div className="font-[Martian-Mono] rounded-xl border-8 border-[#c5c5c5]">
-        <p className="block rounded-xl bg-white text-center text-lg">
+      <div className="font-[Martian-Mono] mb-5 flex gap-2 rounded-xl bg-[#c5c5c5] p-4 sm:mb-0">
+        <p className="flex-grow rounded-lg bg-white p-1 text-center text-xs sm:text-sm">
           {password}
         </p>
+        <FiCopy className="inline text-xl mt-1 text-white"/>
       </div>
     </>
   );
