@@ -1,27 +1,37 @@
 import {useState} from 'react';
 import {createPassword} from "../helpers/generator";
 import Password from './Password';
+import {toast} from 'react-toastify';
 
 const Requirements = () => {
     const [length, setLength] = useState('');
-    const [uppChars, setUppChars] = useState('');
-    const [spChars, setSpChars] = useState('');
-    const [numChars, setNumChars] = useState('');
+    const [uppChars, setUppChars] = useState(0);
+    const [spChars, setSpChars] = useState(0);
+    const [numChars, setNumChars] = useState(0);
     const [password, setPassword] = useState('');
+    const [isValid, setIsValid] = useState(true);
 
     const generatePassword = (e) => {
         e.preventDefault();
 
-        const requirements = {
+        if (length - uppChars - spChars - numChars > 0) {
+          
+          setIsValid(true);
+
+          const requirements = {
             length,
             uppChars,
             spChars,
             numChars,
+          }
+          setPassword(createPassword(requirements));
+
+        } else {
+          setIsValid(false);
+          setPassword('');
+          toast.warning('Invalid Password Requirements. Please Try Again');
         }
-
-        setPassword(createPassword(requirements));
     }
-
 
   return (
     <>
@@ -38,7 +48,7 @@ const Requirements = () => {
               name="length"
               min="0"
               max="20"
-              className="border-2 bg-white border-[#423e58]"
+              className={isValid ? "border-2 bg-white border-[#423e58]" : "border-2 bg-white border-[#8f2828]"}
               required
               value={length}
               onChange={(e) => setLength(e.target.value)}
@@ -54,7 +64,7 @@ const Requirements = () => {
               name="uppercase"
               min="0"
               max="20"
-              className="border-2 bg-white border-[#423e58]"
+              className={isValid ? "border-2 bg-white border-[#423e58]" : "border-2 bg-white border-[#8f2828]"}
               required
               value={uppChars}
               onChange={(e) => setUppChars(e.target.value)}
@@ -70,7 +80,7 @@ const Requirements = () => {
               name="special"
               min="0"
               max="20"
-              className="border-2 bg-white border-[#423e58]"
+              className={isValid ? "border-2 bg-white border-[#423e58]" : "border-2 bg-white border-[#8f2828]"}
               required
               value={spChars}
               onChange={(e) => setSpChars(e.target.value)}
@@ -86,13 +96,13 @@ const Requirements = () => {
               name="numbers"
               min="0"
               max="20"
-              className="border-2 bg-white border-[#423e58]"
+              className={isValid ? "border-2 bg-white border-[#423e58]" : "border-2 bg-white border-[#8f2828]"}
               required
               value={numChars}
               onChange={(e) => setNumChars(e.target.value)}
             />
           </div>
-          <button type="submit" className="block m-auto text-center font-medium border-4 rounded-md p-2 bg-[#b4aed4] border-[#423e58]">
+          <button type="submit" className="cursor-pointer block m-auto text-center font-medium border-4 rounded-md p-2 shadow bg-[#b4aed4] border-[#423e58] hover:bg-[#908bad] hover:border-[#302d41]">
             Generate Password
           </button>
         </form>

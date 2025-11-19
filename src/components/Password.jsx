@@ -1,18 +1,19 @@
 import {FiCopy} from "react-icons/fi";
+import {toast} from 'react-toastify';
 
 const Password = ({password}) => {
-
-  if (password === '') { // placeholder
-    password = "*************";
-  }
-  
   return (
     <>
       <div className="font-[Martian-Mono] mb-5 flex gap-2 rounded-xl bg-[#c5c5c5] p-4 sm:mb-0">
-        <p className="flex-grow rounded-lg bg-white p-1 text-center text-xs sm:text-sm">
+        <p className="grow rounded-lg bg-white p-1 text-center text-xs sm:text-sm">
           {password}
         </p>
-        <FiCopy className="inline text-xl mt-1 text-white"/>
+        <button onClick={async () => {
+          navigator.clipboard.writeText(password);
+          toast.info('Password Copied to Clipboard!');
+        }}>
+          <FiCopy className="inline cursor-pointer text-2xl text-white hover:text-black"/>
+        </button>
       </div>
     </>
   );

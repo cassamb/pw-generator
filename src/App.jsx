@@ -1,6 +1,8 @@
 import Header from "./components/Header";
 import Instructions from "./components/Instructions";
 import Requirements from "./components/Requirements";
+import { Flip, Slide, ToastContainer, Zoom } from "react-toastify"; 
+import 'react-toastify/dist/ReactToastify.css';   // Necessary import here so we can use them throughout the application
 
 const App = () => {
   return (
@@ -12,6 +14,7 @@ const App = () => {
           <Requirements/>
         </section>
       </main>
+      <ToastContainer transition={Flip} hideProgressBar={true} autoClose={2500}/>
     </>
   );
 };
