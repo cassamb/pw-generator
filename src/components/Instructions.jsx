@@ -1,16 +1,16 @@
 const Instructions = () => {
   return (
     <>
-      <section className="font-[Martian-Mono] rounded-xl bg-[#8ba08a] p-5 sm:col-span-3 sm:mb-0 sm:px-12 sm:py-8">
-        <h2 className="font-regular mb-2 text-center text-2xl sm:mb-4 sm:text-3xl">
+      <section className="font-[Martian-Mono] rounded-xl bg-[#8ba08a] p-5 md:col-span-3 md:mb-0 md:px-12 md:py-8">
+        <h2 className="font-regular mb-2 text-center text-2xl md:mb-4 md:text-3xl 2xl:text-4xl">
           Instructions
         </h2>
-        <p className="mb-1 text-xs font-light sm:text-sm">
+        <p className="mb-1 text-xs font-light md:text-sm 2xl:text-base">
           Welcome to the Password Generator where you can generate a random
           password based on the given requirements! You will be able to specify
           the following:
         </p>
-        <ul className="list-disc ps-7 text-xs font-light sm:ps-10 sm:text-sm">
+        <ul className="list-disc ps-7 text-xs font-light md:ps-10 md:text-sm 2xl:text-base">
           <li>Length</li>
           <li>Uppercase Characters (A to Z)</li>
           <li>Special Characters (!, #, $, %, and *)</li>

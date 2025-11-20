@@ -36,7 +36,7 @@ const Requirements = () => {
   return (
     <>
       <Password password={password}/>
-      <div className="rounded-xl bg-[#757092] p-5 font-[Martian-Mono] text-xs sm:flex-1 sm:p-7">
+      <div className="rounded-xl bg-[#757092] p-5 font-[Martian-Mono] text-xs md:flex-1 md:p-7 2xl:text-sm 2xl:pt-9">
         <form onSubmit={generatePassword}>
           <div className="mb-4 flex justify-between">
             <label htmlFor="length" className="font-semibold">
@@ -86,7 +86,7 @@ const Requirements = () => {
               onChange={(e) => setSpChars(e.target.value)}
             />
           </div>
-          <div className="mb-5 flex justify-between">
+          <div className="mb-5 2xl:mb-6 flex justify-between">
             <label htmlFor="numbers" className="font-semibold">
               Numbers:
             </label>
